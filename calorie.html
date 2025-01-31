@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="calorie.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fitness Tracker</h1>
+            <p>Track your workouts and fitness progress</p>
+        </header>
+        <section class="left-section">
+            <div class="input-section">
+                <h1>Calories Burned Calculator</h1>
+                <div class="form-container">
+                  <input type="text" id="activity" placeholder="Enter activity (e.g., running)" required>
+                  <input type="number" id="duration" placeholder="Enter duration (minutes)" required>
+                  <button id="calculate-btn">Calculate</button>
+                </div>
+                <div id="result"></div>
+                
+                <h2>Add Workout</h2>
+                <form id="workout-form">
+                    <input type="text" id="workout-name" placeholder="Workout Name" required>
+                    <input type="number" id="calories-burned" placeholder="Calories Burned" required min="1">
+                    <button type="submit">Add Workout</button>
+                </form>
+                <div class="total-calories">
+                    <h3>Total Calories Burned: <span id="total-calories">0</span></h3>
+                </div>
+            </div>
+            <div class="workout-list">
+                <h2>Your Workouts</h2>
+                <ul id="workouts"></ul>
+            </div>
+            <div class="chart-section">
+                <h2>Calories Burned Chart</h2>
+                <canvas id="caloriesChart"></canvas>
+        </section>
+
+        <section class="right-section">
+            <div class="profile-section">
+                <h2>Your Profile</h2>
+                <form id="profile-form">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="number" id="age" placeholder="Age" required min="1">
+                    <input type="number" id="weight" placeholder="Weight (kg)" required min="1">
+                    <label for="profile-picture">Profile Picture</label>
+                    <input type="file" id="profile-picture" accept="image/*">
+                    <button type="submit">Save Profile</button>
+                </form>
+                <div id="profile-display" style="margin-top: 20px;">
+                    <img id="profile-pic" src="" alt="Profile Picture" width="150" style="display: none;">
+                    <p id="profile-name"></p>
+                    <p id="profile-age"></p>
+                    <p id="profile-weight"></p>
+                </div>
+            </div>
+
+            <div class="fitness-stats">
+                <h2>Enter Fitness Stats</h2>
+                <form id="fitness-form">
+                    <input type="number" id="steps" placeholder="Steps Today" min="0">
+                    <input type="number" id="active-time" placeholder="Active Time (minutes)" min="0">
+                    <input type="number" id="calories-burned-stats" placeholder="Calories Burned Today" min="0">
+                    <button type="submit">Submit Stats</button>
+                </form>
+                <div id="fitness-charts">
+                    <canvas id="fitness-line-chart"></canvas>
+                    <canvas id="fitness-pie-chart"></canvas>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="calorie.js"></script>
+</body>
+</html>
